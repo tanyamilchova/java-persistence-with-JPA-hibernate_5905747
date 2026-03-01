@@ -35,7 +35,7 @@ import jakarta.persistence.criteria.Root;
 public class Main {
   public static void main(String[] args) {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("artclass_persistence_uni");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("artclass_persistence_unit");
 
     // createInstance(emf);
     // findAndUpdateInstance(emf);

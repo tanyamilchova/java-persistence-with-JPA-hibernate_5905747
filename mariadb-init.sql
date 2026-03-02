@@ -1,8 +1,8 @@
 -- Create a database
-DROP DATABASE IF EXISTS library;
-CREATE DATABASE IF NOT EXISTS library;
+DROP DATABASE IF EXISTS artclass;
+CREATE DATABASE IF NOT EXISTS artclass;
 -- Use the database
-USE library;
+USE artclass;
 -- Crate tables in the database
 CREATE TABLE IF NOT EXISTS book(
   book_id INT AUTO_INCREMENT PRIMARY KEY,

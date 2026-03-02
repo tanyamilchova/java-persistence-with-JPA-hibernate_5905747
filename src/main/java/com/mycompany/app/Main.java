@@ -1,42 +1,55 @@
 package com.mycompany.app;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Set;
+// import java.math.BigDecimal;
+// import java.util.List;
+// import java.util.Set;
 
-import com.mycompany.app.dto.BooksAndAuthors;
-import com.mycompany.app.entities.Address;
-import com.mycompany.app.entities.Author;
-import com.mycompany.app.entities.Book;
-import com.mycompany.app.entities.BookType;
-import com.mycompany.app.entities.CardPayment;
-import com.mycompany.app.entities.CashPayment;
-import com.mycompany.app.entities.Category;
-import com.mycompany.app.entities.Fiction;
-import com.mycompany.app.entities.Field;
-import com.mycompany.app.entities.Group;
-import com.mycompany.app.entities.Item;
-import com.mycompany.app.entities.NonFiction;
-import com.mycompany.app.entities.Review;
-import com.mycompany.app.entities.User;
-import com.mycompany.app.entities.keys.ItemKey;
-import com.mycompany.app.repositorypattern.BookRepository;
-import com.mycompany.app.repositorypattern.BookRepositoryImpl;
+// import com.mycompany.app.dto.BooksAndAuthors;
+// import com.mycompany.app.entities.Address;
+// import com.mycompany.app.entities.Author;
+// import com.mycompany.app.entities.Book;
+// import com.mycompany.app.entities.BookType;
+// import com.mycompany.app.entities.CardPayment;
+// import com.mycompany.app.entities.CashPayment;
+// import com.mycompany.app.entities.Category;
+// import com.mycompany.app.entities.Fiction;
+// import com.mycompany.app.entities.Field;
+// import com.mycompany.app.entities.Group;
+// import com.mycompany.app.entities.Item;
+// import com.mycompany.app.entities.NonFiction;
+// import com.mycompany.app.entities.Review;
+import com.mycompany.app.entities.Student;
+// import com.mycompany.app.entities.User;
+// import com.mycompany.app.entities.keys.ItemKey;
+// import com.mycompany.app.repositorypattern.BookRepository;
+// import com.mycompany.app.repositorypattern.BookRepositoryImpl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
+// import jakarta.persistence.Query;
+// import jakarta.persistence.TypedQuery;
+// import jakarta.persistence.criteria.CriteriaBuilder;
+// import jakarta.persistence.criteria.CriteriaQuery;
+// import jakarta.persistence.criteria.Root;
 
 public class Main {
   public static void main(String[] args) {
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("artclass_persistence_unit");
     EntityManager em = emf.createEntityManager();
+
+    try{
+      em.getTransaction().begin();
+      Student student = new Student();
+      student.setName("John");
+
+      em.persist(student);
+      em.getTransaction().commit();
+    }
+  finally {
+    em.close();
+  }
   //   // createInstance(emf);
   //   // findAndUpdateInstance(emf);
   //   // detachAndReattachInstance(emf);

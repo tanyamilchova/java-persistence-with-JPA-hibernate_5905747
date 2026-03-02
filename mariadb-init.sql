@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS artclass;
 -- Use the database
 USE artclass;
 -- Crate tables in the database
-CREATE TABLE IF NOT EXISTS book(
+CREATE TABLE IF NOT EXISTS student(
   book_id INT AUTO_INCREMENT PRIMARY KEY,
   book_name VARCHAR(255),
   isbn VARCHAR(255)
